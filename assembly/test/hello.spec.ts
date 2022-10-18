@@ -14,37 +14,34 @@ describe("A group of test", () => {
   });
 });
 
-describe("An other group of test", () => {
-  test("Testing the Storage", () => {
-    setStorage();
-    error(
-      "getOf " +
-        getOf(
-          new Address("A12E6N5BFAdC2wyiBV6VJjqkWhpz1kLVp2XpbRdSnL1mKjCWT6oR"),
-          "test"
-        )
-    );
-    assert(
-      getOf(
-        new Address("A12E6N5BFAdC2wyiBV6VJjqkWhpz1kLVp2XpbRdSnL1mKjCWT6oR"),
-        "test"
-      ) == "value",
-      "Test failed test"
-    );
-  });
-});
-
-// describe("test set get", () => {
+// describe("An other group of test", () => {
 //   test("Testing the Storage", () => {
 //     setStorage();
-//     const got = getOf(
+//     error(getOf(
 //       new Address("A12E6N5BFAdC2wyiBV6VJjqkWhpz1kLVp2XpbRdSnL1mKjCWT6oR"),
 //       "test"
+//     ))
+//     assert(
+//       getOf(
+//         new Address("A12E6N5BFAdC2wyiBV6VJjqkWhpz1kLVp2XpbRdSnL1mKjCWT6oR"),
+//         "test"
+//       ) == "value",
+//       "Test failed test"
 //     );
-//     const want = "value";
-//     if (got != want) {
-//       error(got + ", " + want + " was expected.");
-//       return;
-//     }
 //   });
 // });
+
+describe("test set get", () => {
+  test("Testing the Storage", () => {
+    setStorage();
+    const got = getOf(
+      new Address("A12E6N5BFAdC2wyiBV6VJjqkWhpz1kLVp2XpbRdSnL1mKjCWT6oR"),
+      "test"
+    );
+    const want = "value";
+    if (got != want) {
+      error(got + ", " + want + " was expected.");
+      return;
+    }
+  });
+});
